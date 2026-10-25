@@ -25,6 +25,38 @@ import 'screens/main_navigation_screen.dart';
 /// 5. Real-time GPS simulation with animated telemetry HUD.
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Graceful fallback for layout warnings to prevent red screen crashes
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return Material(
+      color: Colors.white,
+      child: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.airport_shuttle_rounded, color: AppColors.primary, size: 48),
+                const SizedBox(height: 12),
+                const Text(
+                  'SRKR Campus Bus Tracker',
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 18, color: AppColors.textPrimary),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  details.exceptionAsString(),
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  };
+
   runApp(const CampusBusApp());
 }
 

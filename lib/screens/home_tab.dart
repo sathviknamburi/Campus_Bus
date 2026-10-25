@@ -192,21 +192,27 @@ class HomeTab extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            Icon(Icons.directions_bus_filled_rounded, color: routeColor, size: 22),
-                            const SizedBox(width: 8),
-                            const Text(
-                              'Your Designated College Bus',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.textPrimary,
-                                letterSpacing: -0.3,
+                        Expanded(
+                          child: Row(
+                            children: [
+                              Icon(Icons.directions_bus_filled_rounded, color: routeColor, size: 22),
+                              const SizedBox(width: 8),
+                              const Expanded(
+                                child: Text(
+                                  'Your Designated College Bus',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w900,
+                                    color: AppColors.textPrimary,
+                                    letterSpacing: -0.3,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
                           decoration: BoxDecoration(
@@ -1030,19 +1036,24 @@ class HomeTab extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'SRKR Engineering College',
-                              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: AppColors.textPrimary, letterSpacing: -0.3),
-                            ),
-                            Text(
-                              'Campus Transit Guest Directory',
-                              style: TextStyle(fontSize: 11, color: AppColors.textSecondary, fontWeight: FontWeight.w500),
-                            ),
-                          ],
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'SRKR Engineering College',
+                                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 17, color: AppColors.textPrimary, letterSpacing: -0.3),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              Text(
+                                'Campus Transit Guest Directory',
+                                style: TextStyle(fontSize: 11, color: AppColors.textSecondary, fontWeight: FontWeight.w500),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.primary,
@@ -1099,10 +1110,14 @@ class HomeTab extends StatelessWidget {
                                   style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w900),
                                 ),
                               ),
-                              const Spacer(),
-                              const Text(
-                                '7 Regional Corridors Active',
-                                style: TextStyle(color: Color(0xFFC7D2FE), fontSize: 11, fontWeight: FontWeight.w600),
+                              const SizedBox(width: 8),
+                              const Expanded(
+                                child: Text(
+                                  '7 Regional Corridors Active',
+                                  textAlign: TextAlign.end,
+                                  style: TextStyle(color: Color(0xFFC7D2FE), fontSize: 11, fontWeight: FontWeight.w600),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                             ],
                           ),
@@ -1210,10 +1225,14 @@ class HomeTab extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Campus Fleet Buses (${buses.length})',
-                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w900, color: AppColors.textPrimary),
+                        Expanded(
+                          child: Text(
+                            'Campus Fleet Buses (${buses.length})',
+                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w900, color: AppColors.textPrimary),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
+                        const SizedBox(width: 8),
                         const Text(
                           'Live GPS Connected',
                           style: TextStyle(fontSize: 11, color: AppColors.liveGreen, fontWeight: FontWeight.w800),

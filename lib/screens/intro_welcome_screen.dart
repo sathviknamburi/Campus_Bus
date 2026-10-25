@@ -116,9 +116,12 @@ class IntroWelcomeScreen extends StatelessWidget {
                               children: [
                                 Icon(Icons.location_on_rounded, size: 14, color: Color(0xFFFF9E0B)),
                                 SizedBox(width: 4),
-                                Text(
-                                  'Chinna Amiram, Bhimavaram, AP - 534204',
-                                  style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                                Flexible(
+                                  child: Text(
+                                    'Chinna Amiram, Bhimavaram, AP - 534204',
+                                    style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ],
                             ),
@@ -281,13 +284,16 @@ class IntroWelcomeScreen extends StatelessWidget {
                               child: const Icon(Icons.hub_rounded, color: AppColors.primary, size: 20),
                             ),
                             const SizedBox(width: 10),
-                            const Text(
-                              '7 Regional Bus Corridors',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.textPrimary,
-                                letterSpacing: -0.3,
+                            const Expanded(
+                              child: Text(
+                                '7 Regional Bus Corridors',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.textPrimary,
+                                  letterSpacing: -0.3,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ],
@@ -316,13 +322,16 @@ class IntroWelcomeScreen extends StatelessWidget {
                               child: const Icon(Icons.bolt_rounded, color: AppColors.secondary, size: 20),
                             ),
                             const SizedBox(width: 10),
-                            const Text(
-                              'Key Transit Capabilities',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w900,
-                                color: AppColors.textPrimary,
-                                letterSpacing: -0.3,
+                            const Expanded(
+                              child: Text(
+                                'Key Transit Capabilities',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w900,
+                                  color: AppColors.textPrimary,
+                                  letterSpacing: -0.3,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ],
