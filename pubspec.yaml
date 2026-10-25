@@ -1,0 +1,49 @@
+name: campus_bus_tracker
+description: "Campus Bus Tracking & Information Mobile App for College Students and Drivers."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  # Provider makes state sharing simple, readable, and decoupled for beginners
+  provider: ^6.1.2
+
+  # Typography & Design
+  # Google Fonts provides modern typography (e.g., Poppins, Inter) without manual font bundling
+  google_fonts: ^6.2.1
+
+  # Maps & Navigation
+  # Used for rendering the interactive campus map, bus markers, and route polylines
+  google_maps_flutter: ^2.6.0
+
+  # Geolocation & Permissions
+  # Retrieves device coordinates and handles permission requests
+  geolocator: ^11.0.0
+
+  # Utilities & Formatting
+  # DateFormat and number formatting for ETA and timestamps
+  intl: ^0.19.0
+
+  # Local Key-Value Storage
+  # Saves student preferences like dark mode, role, and favourite routes
+  shared_preferences: ^2.2.3
+
+  # UI Micro-animations
+  # Adds smooth entrance animations to bus cards and status badges
+  flutter_animate: ^4.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
